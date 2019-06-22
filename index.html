@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<!-- Start Head of Document -->
+<head>
+
+  <!-- META -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/scripts/style.css">
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap" rel="stylesheet">
+
+  <!-- Tab Title -->
+  <title>Giphy App</title>
+
+</head>
+
+<!-- Start Body of Document -->
+<body>
+
+<div class="container" id="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="title">
+        <h1>Giphy!</h1>
+        <p>Search a term and add a button! Each button you click will return 10 images relating to that category.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-10">
+      <div class="search">
+        <form>
+          <div class="form-group">
+            <input type="search" class="form-control" id="searchInput" placeholder="Search term">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="search">
+        <button type="submit" class="btn btn-primary">Add Term</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <div class="buttonLabel">
+        <h2>Buttons:</h2>
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="buttonList">
+        <div id="buttonList"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <div class="resultLabel">
+        <h2>Results:</h2>
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="resultList">
+        <div id="resultList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+<!-- jQuery & JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/scripts/javascript.js"></script>
+
+</html>

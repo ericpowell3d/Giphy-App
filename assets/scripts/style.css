@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 1.5em;
+    color: #323232;
+}
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+}
+h2 {
+    font-size: 24px;
+}
+
+#container {
+    background: #00000032;
+    margin-top: 32px;
+    border-radius: 8px;
+}
+
+.buttonLabel {
+    padding: 12px;
+    margin-top: 12px;
+}
+.buttonList {
+    padding: 12px;
+    margin-top: 12px;
+    background: #00000032;
+    border-radius: 8px;
+}
+
+.resultLabel {
+    padding: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.resultList {
+    padding: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background: #00000032;
+    border-radius: 8px;
+}
