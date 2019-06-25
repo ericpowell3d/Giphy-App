@@ -13,6 +13,7 @@ body {
 
 h1 {
     font-size: 48px;
+    margin-bottom: 24px;
 }
 h2 {
     font-size: 16px;
@@ -49,10 +50,15 @@ h2 {
     border-radius: 8px;
 }
 
+
+#searchInput {
+    margin-top: 6px;
+}
 .btn-primary {
     font-size: 16px;
     background: #ff0064;
     border-color: #ff0064;
+    margin-top: 6px;
 }
 .btn-secondary {
     font-size: 16px;
@@ -64,7 +70,7 @@ h2 {
 }
 
 #search {
-    margin: 18px 64px 24px;
+    margin: 12px 64px 24px;
 }
 
 .gifChunk {

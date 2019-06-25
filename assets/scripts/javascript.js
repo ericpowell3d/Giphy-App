@@ -1,6 +1,5 @@
-// 
-
-var topics = ["kitten", "puppy", "space", "video games", "keanu reeves"];
+// Declare topics array
+var topics = ["keanu reeves", "video games", "space", "hedgehog", "bunny chewing"];
 
 // Create buttons
 function buttonLoop() {
@@ -12,7 +11,7 @@ function buttonLoop() {
     }
 }
 
-// Function from hitting the "Add Term" button
+// Adds a term to the button list
 function addTerm() {
     var term = $("#searchInput").val().trim();
     var isDuplicate = topics.includes(term);
@@ -28,7 +27,7 @@ function addTerm() {
     }
 }
 
-// Function from hitting the term buttons
+// Adds results based on the button clicked
 function addResult() {
     var term = $(this).text();
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + term + "&api_key=dc6zaTOxFJmzC&limit=10";;
@@ -39,16 +38,33 @@ function addResult() {
     }).then(function(response) {
         for(let i=0; i<10; i++){
             var newGif = $(`<div class="gifChunk">`);
-            var image = $(`<img src="${response.data[i].images.fixed_height.url}">`);
+            var image = $(`<img class="gif" src="${response.data[i].images.fixed_height.url}" data-state="animate">`);
+            image.attr("data-still", response.data[i].images.fixed_height_still.url);
+            image.attr("data-animate", response.data[i].images.fixed_height.url);
             var rated = $(`<p>`).text(`Rated: ${response.data[i].rating.toUpperCase()}`);
             newGif.append(image);
             newGif.append(rated);
             $("#resultList").prepend(newGif);
         }
+        console.log(queryURL);
         console.log(response);
     });
+}
+
+// Change GIF state when clicked (Play/Pause)
+function gifState() {
+    var state = $(this).attr("data-state");
+
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    }
 }
 
 $(document).ready(function(){ buttonLoop(); });
 $(document).on("click", ".btn-primary", addTerm);
 $(document).on("click", ".btn-secondary", addResult);
+$(document).on("click", ".gif", gifState);
